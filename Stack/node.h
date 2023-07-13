@@ -26,8 +26,9 @@ public:
     }
     T get_elem(){return elemento;};
     void set_elem(T elem){elemento = elem;};
-    void set_sig(node<T> &nodo) {siguiente = nodo;};
+    void set_sig(node<T> &nodo) {siguiente = &nodo;};
     void print_elem(){std::cout << "El elemento es: " << elemento << std::endl;};
+    void free_node(){if (siguiente != nullptr) {delete siguiente;}; delete this;};
 };
 
 #endif //EDA_CMASMAS_NODE_H
